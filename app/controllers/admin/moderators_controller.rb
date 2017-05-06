@@ -1,4 +1,4 @@
-class Admin::ModeratorsController < ApplicationController
+class Admin::ModeratorsController < Admin::ApplicationController
   def show
     @moderators = Moderator.all
   end
@@ -9,6 +9,7 @@ class Admin::ModeratorsController < ApplicationController
 
   def update
     @moderator = Moderator.find(params[:id])
+
     if @moderator.update(moderator_params)
       flash[:notice] = "Moderator was successfully updated"
       redirect_to admin_moderator_url
