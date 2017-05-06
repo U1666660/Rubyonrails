@@ -6,6 +6,7 @@ get '/logout' => 'admin/sessions#destroy'
 
   namespace :admin do
     resources :posts
+    resources :messages, only: [:index, :show, :update, :destroy]
     resources :visitors, only: [:index, :destroy]
     resources :tags, except: [:index]
     resources :comments, only: [:index, :update, :destroy]
