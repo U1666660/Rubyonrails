@@ -5,9 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 moderator = Moderator.create(
   fullname: "Yunqing Peng",
   username: "yunqing",
-  password: "Password1"
+  password: "Password1")
 
-)
+
+30.times do
+  post = Post.create(
+  title: Faker::Lorem.sentence(20),
+  content: Faker::Lorem.paragraph,
+  publish: true,
+  moderator: moderator)
+
+  tag = Tag.create(
+    name: Faker::Lorem.words)
+
+  post_tag = PostTag.create(post: post, tag: tag)
+end
