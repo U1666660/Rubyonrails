@@ -14,7 +14,7 @@
 <% @posts.each do |post| %>
     <tr>
         <td><%= truncate(post.title, length: 60, separate: '' ) %></td>
-          <td><%= post.publish %></td>
+          <td><%= status_converter(post.publish, truthy: 'Active', falsey: 'Pending') %></td>
             <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
             <td><%= link_to 'Show', admin_post_path(post) %></td>
             <td><%= link_to 'Delete', admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
@@ -26,3 +26,4 @@
   </tbody>
 
 </table>
+<p><%= will_paginate @posts %></p>
