@@ -4,6 +4,6 @@ get '/login' => 'admin/sessions#new'
 
   namespace :admin do
     resources :sessions, only: [:new, :create, :destroy]
-    resources :moderators, only: [:show, :edit, :update]
+    resources :moderators, only: [:index, :edit, :update]
 end
 end

@@ -1,5 +1,5 @@
 class Admin::ModeratorsController < Admin::ApplicationController
-  def show
+  def index
     @moderators = Moderator.all
   end
 
@@ -12,7 +12,7 @@ class Admin::ModeratorsController < Admin::ApplicationController
 
     if @moderator.update(moderator_params)
       flash[:notice] = "Moderator was successfully updated"
-      redirect_to admin_moderator_url
+      redirect_to admin_moderators_url
     else
       flash[:alert] = "There was a problem updating moderator"
       render 'edit'
