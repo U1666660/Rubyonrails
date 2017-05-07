@@ -1,2 +1,24 @@
 <h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+
+  <% @posts.each do |post| %>
+      <p>
+          <%= truncate(post.title, length: 70, separate: '' ) %><br>
+          <%= time_ago post.created_at %>
+      </p>
+
+      <p>
+          <%= truncate(post.content, length: 104, separate: '' ) { link_to 'Read More', post_path(post) }%>
+
+      </p>
+
+      <p>
+          <% post.tags.each do |tag| %>
+          <%= link_to tag.name, '#' %>
+          <% end %>
+      </p>
+
+
+<% end %>
+
+<p><%= will_paginate @posts %></p>
