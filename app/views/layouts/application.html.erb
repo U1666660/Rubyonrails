@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rubyonrails Blog</title>
+    <title>Ruby on Rails Blog</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' =>true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' =>true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
+
+<%= render 'shared/nav'%>
 
   <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
@@ -17,16 +19,7 @@
   <div class="alert"><%= flash[:alert] %></div>
   <% end %>
 
-<p>
-  <%= link_to Setting.site_name, posts_path %>
-  <%= link_to 'Posts', posts_path %>
-  <%= link_to 'About', '#' %>
-  <%= link_to 'Contact', new_message_path %>
-  <%= link_to 'Login', login_path %>
 
-
-
-</p>
 
 
   <%= yield %>

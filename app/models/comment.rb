@@ -12,4 +12,7 @@ def self.matching_fullname_or_message params
   joins(:visitor).where("fullname LIKE ? OR message LIKE ?", "%#{params}%", "%#{params}%")
 end
 
+include Notifiable
+
+
 end
