@@ -5,7 +5,7 @@
 
   <% @posts.each do |post| %>
       <p>
-          <%= truncate(post.title, length: 70, separate: '' ) %><br>
+          <%= truncate(post.title, length: 60, separate: '' ) %><br>
           <%= time_ago post.created_at %>
       </p>
 
