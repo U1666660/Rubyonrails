@@ -4,7 +4,7 @@ class CreateVisitors < ActiveRecord::Migration[5.0]
       t.string :fullname
       t.string :email
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.boolean :publish
       t.references :moderator, foreign_key: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

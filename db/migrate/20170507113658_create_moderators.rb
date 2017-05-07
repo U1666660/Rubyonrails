@@ -5,7 +5,7 @@ class CreateModerators < ActiveRecord::Migration[5.0]
       t.string :username
       t.string :password_digest
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

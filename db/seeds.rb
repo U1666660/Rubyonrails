@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 moderator = Moderator.create(
-  fullname: "Yunqing Peng",
-  username: "yunqing",
-  password: "Password1")
+fullname: "Yunqing Peng",
+username: "yunqing@gmail.com",
+password: "Password1")
 
 
 30.times do

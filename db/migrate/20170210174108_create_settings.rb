@@ -7,7 +7,7 @@ class CreateSettings < ActiveRecord::Migration[5.0]
       t.boolean :prevent_commenting
       t.boolean :tag_visibility
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
