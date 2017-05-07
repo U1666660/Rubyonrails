@@ -6,6 +6,7 @@ get '/logout' => 'admin/sessions#destroy'
 
   namespace :admin do
     resources :posts
+    resources :notifications, only: [:index, :destroy]
     resources :messages, only: [:index, :show, :update, :destroy]
     resources :visitors, only: [:index, :destroy]
     resources :tags, except: [:index]
@@ -13,4 +14,9 @@ get '/logout' => 'admin/sessions#destroy'
     resources :sessions, only: [:new, :create, :destroy]
     resources :moderators, only: [:index, :edit, :update]
 end
+
+match 'dismiss_all_notifications', to: 'admin/notifications#delete_all', via: :delete
+
+
+
 end
