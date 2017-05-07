@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+
 get '/login' => 'admin/sessions#new'
 get '/logout' => 'admin/sessions#destroy'
 
   namespace :admin do
     resources :posts
+    resources :settings, only: [:new, :create, :edit, :update]
     resources :dashboard, only: [:index]
     resources :moderators, only: [:index, :edit, :update]
     resources :notifications, only: [:index, :destroy]
