@@ -10,5 +10,12 @@ def self.post_per_page
 
 end
 
+def self.tag_visible?
+  Setting.first.tag_visibility
+
+end
+
+
+
 
 end

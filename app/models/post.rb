@@ -13,4 +13,10 @@ def self.matching_title_or_content search
   where("title LIKE ? OR content LIKE?", "%#{search}%", "%#{search}%")
 end
 
+
+def self.filter_by_tags params_tag
+    includes(:tags).where(publish: true, tags: {name: params_tag}).order(id: :desc)
+
+end
+
 end
