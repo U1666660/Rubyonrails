@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 root to: 'posts#index'
 
+# root to: 'users#index', via: :get
+get 'auth/facebook', as: 'auth_provider'
+get 'auth/facebook/callback', to: 'users#login'
+
 
 get '/login' => 'admin/sessions#new'
 get '/logout' => 'admin/sessions#destroy'
@@ -24,6 +28,7 @@ end
   resources :messages, only: [:new, :create]
   resources :comments, only: [:create]
   resources :about, only: [:index]
+
 
 
 match 'dismiss_all_notifications', to: 'admin/notifications#delete_all', via: :delete

@@ -7,7 +7,7 @@
 
 <p>
   <%= @post.title %><br>
-  <%= time_ago(@post.created_at) %><br>
+  <span class="glyphicon glyphicon-time"></span> <%= time_ago(@post.created_at) %><br>
 </p>
 
 <p>
@@ -40,8 +40,11 @@
             </div>
   <% end %>
 
-
+<h3>Leave a Comment</h3>
+<br>
   <div class="row">
+
+
 
          <div class="col-sm-6  form-group ">
   <%= f.label :fullname, class: 'col-sm-2 control-label' %>

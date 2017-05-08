@@ -9,7 +9,7 @@
   <% @posts.each do |post| %>
       <p>
           <%= truncate(post.title, length: 60, separate: '' ) %><br>
-          <%= time_ago post.created_at %>
+          <span class="glyphicon glyphicon-time"></span>  <%= time_ago post.created_at %>
       </p>
 
       <p>
