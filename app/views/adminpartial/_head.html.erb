@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <title>Ruby on Rails Blog</title>
     <%= csrf_meta_tags %>
 
@@ -11,9 +11,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
+
+    <%= render 'adminpartial/nav'%>
   <body>
 
-<%= render 'adminpartial/nav'%>
+<br>
+<div class="container">
+<% if flash[:notice] %>
+<div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+<div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+</div>
 
 
   <%= yield %>
