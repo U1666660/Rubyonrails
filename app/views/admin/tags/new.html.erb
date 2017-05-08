@@ -1,8 +1,17 @@
-<h1>Admin::Tags#new</h1>
+<div class="container">
+
+<div class="text-center">
+
+
+<h1>Admin Tags New</h1>
+</div>
+
+<div class="col-sm-4 form-group">
 <%= form_for [:admin, @tag] do |f| %>
-  <p><%= f.text_area :name, placeholder: 'e.g. PHP, Ruby, Java' %></p>
+  <p><%= f.text_area :name, placeholder: 'e.g. PHP, Ruby, Java', class: 'form-control', row: '8' %></p>
   <p><%= f.submit %></p>
 <% end %>
+</div>
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -38,3 +47,6 @@
   </tbody>
 
 </table>
+
+
+</div>

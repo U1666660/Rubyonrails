@@ -1,6 +1,9 @@
-<h1>Posts#index</h1>
+<div class="container">
 
-<%= link_to 'All Posts', posts_path %>
+
+<h1>Posts Index</h1>
+
+<%= link_to 'All Posts', posts_path, class:'btn btn-primary' %>
 
 
   <% @posts.each do |post| %>
@@ -25,4 +28,8 @@
       <hr>
 <% end %>
 
+<div class="text-center">
 <p><%= will_paginate @posts %></p>
+</div>
+
+</div>

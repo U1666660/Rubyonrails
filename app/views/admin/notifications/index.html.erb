@@ -1,8 +1,13 @@
+<div class="container">
+
+
+
+
 <h1>Notifications</h1>
 
 <%=
   if Notification.any?
-    link_to 'Dismiss All', dismiss_all_notifications_path, method: :delete
+    link_to 'Dismiss All', dismiss_all_notifications_path, class:'btn btn-default', style: "color: #FF4500", method: :delete
 
   end
 
@@ -16,7 +21,7 @@
 <p>
 
 <%= "#{notif.notifiable.fullname} added as a new visitor #{time_ago notif.created_at}" %>
-<%= link_to 'Dismiss', admin_notification_path(notif), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Dismiss', admin_notification_path(notif), style: "color: #FF4500", method: :delete, data: {confirm: 'Are you sure?'} %>
 
 </p>
 <% end %>
@@ -31,3 +36,5 @@
 
 </p>
 <% end %>
+
+</div>

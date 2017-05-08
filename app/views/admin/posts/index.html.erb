@@ -1,12 +1,19 @@
-<h1>Admin::Posts#index</h1>
-<p><%= link_to 'New Post', new_admin_post_path %></p>
+<div class="container">
 
+
+<div class="text-center">
+<h1>Admin Posts Index</h1>
+</div>
+
+<div class="text-center">
+
+<button type="button" class="btn btn btn-default"><%= link_to 'New Post', new_admin_post_path %></button>
 
 <p>
   <%= render 'search', route: admin_posts_path %>
 
 </p>
-
+</div>
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -33,4 +40,8 @@
   </tbody>
 
 </table>
+<div class="text-center">
 <p><%= will_paginate @posts %></p>
+</div>
+
+</div>

@@ -1,3 +1,7 @@
+<div class="container">
+
+
+
 <h1>Visitors</h1>
 
 
@@ -8,7 +12,7 @@
 <p><%= visitor.fullname %></p>
 <p><%= visitor.email %></p>
 <p><%= time_ago visitor.created_at %></p>
-<p><%= link_to 'Delete', admin_visitor_path(visitor), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<p><%= link_to 'Delete', admin_visitor_path(visitor), style: 'color: red', method: :delete, data: {confirm: 'Are you sure?'} %></p>
 
 
 
@@ -16,3 +20,4 @@
 <hr>
 
 <% end %>
+</div>

@@ -1,8 +1,16 @@
+<div class="container">
+
+
 <h1>Dashboard</h1>
 
 <h2>Post</h2>
-<%= link_to 'create new post', new_admin_post_path %><br>
-<%= link_to 'list posts', admin_posts_path %><br>
+
+<button class="btn btn-default btn-sm"><%= link_to new_admin_post_path, style: "color: #008b45" do %><h5>Create New Post</h5></button>
+<% end %>
+
+<button class="btn btn-default btn-sm"><%= link_to admin_posts_path do %><h5>List Posts</h5></button>
+  <% end %>
+<br>
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -21,8 +29,8 @@
           <td><%= post.comments.count %></td>
             <td><%= time_ago post.created_at %></td>
             <td><%= link_to 'edit', edit_admin_post_path(post) %></td>
-            <td><%= link_to 'view', admin_post_path(post) %></td>
-            <td><%= link_to 'del', admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?'}  %></td>
+            <td><%= link_to 'view', admin_post_path(post), style: "color: #FF4500" %></td>
+            <td><%= link_to 'del', admin_post_path(post), style: "color: red", method: :delete, data: {confirm: 'Are you sure?'}  %></td>
     </tr>
 
 <% end %>
@@ -32,7 +40,8 @@
 
 
 <h2>Comments</h2>
-<%= link_to 'list all comments', admin_comments_path  %>
+<button class="btn btn-default btn-sm"><%= link_to admin_comments_path, style: "color: #FF4500" do %><h5>List All Comments</h5></button>
+<% end %>
 <% @comments.each do |comment| %>
 <p><%= comment.visitor.fullname %></p>
 <p><%= truncate(comment.message, length: 125, separate: '' ) %></p>
@@ -60,9 +69,12 @@
           <td><%= visitor.fullname %></td>
           <td><%= visitor.email %></td>
             <td><%= time_ago visitor.created_at %></td>
-            <td><%= link_to 'delete', admin_visitor_path(visitor), method: :delete, data: {confirm: 'Are you sure?'}  %></td>
+            <td><%= link_to 'delete', admin_visitor_path(visitor), style: "color: red", method: :delete, data: {confirm: 'Are you sure?'}  %></td>
     </tr>
 
 <% end %>
   </tbody>
 </table>
+
+
+</div>

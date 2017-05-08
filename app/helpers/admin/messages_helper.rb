@@ -8,9 +8,9 @@ end
 def build_read_status_link message
 
   if message.status == true
-    link_to 'Un-Read', admin_message_path(message, status: false), method: :put
+    link_to 'Un-Read', admin_message_path(message, status: false), style: "color: #FFA500",  method: :put
   else
-    link_to 'Read', admin_message_path(message, status: true), method: :put
+    link_to 'Read', admin_message_path(message, status: true), style: "color: #0000b2", method: :put
   end
 
 end
