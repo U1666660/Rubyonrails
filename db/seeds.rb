@@ -11,6 +11,11 @@ fullname: "Yunqing Peng",
 username: "yunqing@gmail.com",
 password: "Password1")
 
+user = User.create(
+fullname: "#{ @user }",
+username: "#{ @user }")
+
+
 
 30.times do
   post = Post.create(

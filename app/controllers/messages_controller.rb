@@ -12,8 +12,6 @@ class MessagesController < ApplicationController
         render :new
       end
 
-
-
   end
 
 

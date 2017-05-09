@@ -1,11 +1,11 @@
 <div class="container">
 
 
-<div class="text-center">
-<h1>Admin Posts Index</h1>
-</div>
 
-<div class="text-center">
+<h1>Admin Posts Index</h1>
+
+
+
 
 <button type="button" class="btn btn btn-default"><%= link_to 'New Post', new_admin_post_path %></button>
 
@@ -13,7 +13,7 @@
   <%= render 'search', route: admin_posts_path %>
 
 </p>
-</div>
+
 
 <table class="table table-bordered table-hover">
     <thead>
@@ -31,7 +31,7 @@
           <td><%= status_converter(post.publish, truthy: 'Active', falsey: 'Pending') %></td>
             <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
             <td><%= link_to 'Show', admin_post_path(post) %></td>
-            <td><%= link_to 'Delete', admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            <td><%= link_to 'Delete', admin_post_path(post), style: 'color: red',method: :delete, data: {confirm: 'Are you sure?'} %></td>
 
     </tr>
 
