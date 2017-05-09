@@ -2,9 +2,10 @@
 
 
 <h1>Posts Index</h1>
+<br>
+<%= link_to 'All Posts', posts_path, class:'btn btn-default' %>
 
-<%= link_to 'All Posts', posts_path, class:'btn btn-primary' %>
-
+<br><br>
 
   <% @posts.each do |post| %>
       <p>
