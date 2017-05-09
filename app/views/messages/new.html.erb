@@ -1,9 +1,10 @@
 <div class="container">
 
 <h1>Messages New</h1>
+
 <br>
 
-<div class="row">
+
 
 <%= form_for @visitor_message, url: messages_url do |f| %>
     <% if @visitor_message.errors.any? %>
@@ -20,7 +21,7 @@
             </ul>
           </div>
 <% end %>
-</div>
+
 
 
 
@@ -50,8 +51,6 @@
        <% end %>
       </div>
     </div>
-
-
 
             <div class="col-sm-12 form-group text-center">
               <%= f.submit 'Send Message' %>

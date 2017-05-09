@@ -1,10 +1,9 @@
 <div class="container">
 
-
-
 <h1>Posts Show</h1>
-<%= link_to 'All Posts', posts_path, class:'btn btn-primary' %>
-
+<br>
+<%= link_to 'All Posts', posts_path, class:'btn btn-default' %>
+<br><br>
 <p>
   <%= @post.title %><br>
   <span class="glyphicon glyphicon-time"></span> <%= time_ago(@post.created_at) %><br>
